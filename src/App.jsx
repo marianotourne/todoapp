@@ -1,35 +1,35 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import "./App.css";
+import { TodoCounter } from "./components/TodoCounter/TodoCounter";
+import { TodoSearch } from "./components/TodoSearch/TodoSearch";
+import { TodoList } from "./components/TodoList/TodoList";
+import { TodoItem } from "./components/TodoItem/TodoItem";
+import { CreateTodoButton } from "./components/CreateTodoButton/CreateTodoButton";
+
+const defaultTodos = [
+  { text: "Aprender React", completed: false },
+  { text: "Crear array default todos", completed: true },
+  { text: "Inicializar el proyecto en git", completed: true },
+  { text: "Deshacer último commit", completed: false },
+  { text: "Ir a la peña", completed: false },
+];
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <TodoCounter completed={9} total={12} />
+      <TodoSearch />
+      <TodoList>
+        {defaultTodos.map((todo) => (
+          <TodoItem
+            key={todo.text}
+            text={todo.text}
+            completed={todo.completed}
+          />
+        ))}
+      </TodoList>
+      <CreateTodoButton />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
