@@ -1,0 +1,24 @@
+.todoSearchBox {
+  display: flex;
+  justify-content: center;
+}
+
+.todoSearchInput {
+  padding: 8px;
+  width: 90%;
+  font-size: 1.6rem;
+}
+
+input[type="text"] {
+  /* padding: 12px 20px; */
+  margin: 8px 0;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+}
+
+input[type="text"]:focus {
+  border: 2px solid #555;
+}
