@@ -1,0 +1,30 @@
+.TodoItem {
+  display: flex;
+  justify-content: space-between;
+  margin: 16px 0px;
+  border: 1px solid #fff;
+  background-color: var(--primary-color);
+  padding: 16px;
+}
+
+.TodoItem p {
+  font-size: 2rem;
+}
+
+.iconCheck,
+.iconDelete {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.iconDelete {
+  color: #ff0000;
+}
+
+.iconCheckActive {
+  color: #3d9900;
+}
+
+.TodoItemCompleted {
+  text-decoration: line-through;
+}

@@ -10,14 +10,22 @@ html {
   font-size: 62.5%;
 }
 
+:root {
+  --text-color: #f5efe7;
+  --bkg-color: #4f709c;
+  --primary-color: #213555;
+  --secondary-color: #d8c4b6;
+}
+
 body {
   min-width: 360px;
-  margin: 0 auto;
+  margin: 0 auto 100px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: bisque;
+  background: var(--bkg-color);
+  color: var(--text-color);
 }
 
 button {
@@ -31,5 +39,4 @@ ul {
 #root {
   width: 95%;
   height: 100vh;
-  background-color: cornsilk;
 }

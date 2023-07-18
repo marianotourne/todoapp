@@ -8,9 +8,9 @@ import { CreateTodoButton } from "./components/CreateTodoButton/CreateTodoButton
 const defaultTodos = [
   { text: "Aprender React", completed: false },
   { text: "Crear array default todos", completed: true },
-  { text: "Inicializar el proyecto en git", completed: true },
-  { text: "Deshacer último commit", completed: false },
-  { text: "Ir a la peña", completed: false },
+  { text: "Inicializar el proyecto en git", completed: false },
+  { text: "Cambiar colores de estilos", completed: false },
+  { text: "Ir a la peña", completed: true },
 ];
 
 function App() {

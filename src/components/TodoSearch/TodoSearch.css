@@ -12,7 +12,7 @@
 input[type="text"] {
   /* padding: 12px 20px; */
   margin: 8px 0;
-  border: 2px solid #ccc;
+  border: 3px solid transparent;
   border-radius: 6px;
   -webkit-transition: 0.5s;
   transition: 0.5s;
@@ -20,5 +20,5 @@ input[type="text"] {
 }
 
 input[type="text"]:focus {
-  border: 2px solid #555;
+  border: 3px solid var(--primary-color);
 }
