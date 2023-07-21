@@ -1,14 +1,16 @@
 .TodoItem {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
   margin: 16px 0px;
   border: 1px solid #fff;
   background-color: var(--primary-color);
   padding: 16px;
+  min-height: 64px;
 }
 
 .TodoItem p {
   font-size: 2rem;
+  margin: 0 12px;
 }
 
 .iconCheck,

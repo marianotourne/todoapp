@@ -1,4 +1,6 @@
 import './TodoSearch.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCircleXmark } from '@fortawesome/free-regular-svg-icons';
 
 export const TodoSearch = ({ searchValue, setSearchValue }) => {
   return (
@@ -9,6 +11,11 @@ export const TodoSearch = ({ searchValue, setSearchValue }) => {
         value={searchValue}
         className="todoSearchInput"
         onChange={(event) => setSearchValue(event.target.value)}
+      />
+      <FontAwesomeIcon
+        icon={faCircleXmark}
+        className="iconClear"
+        onClick={() => setSearchValue('')}
       />
     </div>
   );
