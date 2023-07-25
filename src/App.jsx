@@ -27,7 +27,7 @@ function App() {
     return todoText.includes(searchText);
   });
 
-  const handleCompleteTodo = (text) => {
+  const toggleTodo = (text) => {
     const newTodos = [...todos];
     const todoIndex = newTodos.findIndex((todo) => todo.text == text);
     newTodos[todoIndex].completed = !newTodos[todoIndex].completed;
@@ -48,7 +48,7 @@ function App() {
             key={todo.text}
             text={todo.text}
             completed={todo.completed}
-            onComplete={() => handleCompleteTodo(todo.text)}
+            onComplete={() => toggleTodo(todo.text)}
             onDelete={() => deleteTodo(todo.text)}
           />
         ))}

@@ -1,12 +1,12 @@
 .CreateTodoButton {
   height: 64px;
   width: 64px;
-  padding: 24px;
+  padding: 8px;
   color: #fff;
   background-color: #23c483;
   border: none;
   border-radius: 50%;
-  font-size: 2rem;
+  font-size: 4rem;
   font-weight: bold;
   display: flex;
   align-items: center;
