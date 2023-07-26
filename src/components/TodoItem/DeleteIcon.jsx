@@ -1,3 +1,5 @@
+import { TodoIcon } from "./TodoIcon";
+
 export const DeleteIcon = () => {
-  return <div>X</div>;
+  return <TodoIcon type="delete" color="blue" />;
 };

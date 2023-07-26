@@ -1,0 +1,25 @@
+.icon-container-check,
+.icon-container-delete {
+  cursor: pointer;
+}
+
+/* .icon-container-check svg {
+  fill: white;
+}
+
+.icon-container-delete svg {
+  fill: #ff0000;
+} */
+
+.icon-container-checkActive {
+  fill: #3d9900;
+}
+
+.TodoItemCompleted {
+  text-decoration: line-through;
+}
+
+.icon-svg {
+  width: 24px;
+  height: 24px;
+}
