@@ -3,7 +3,7 @@ import "./TodoCounter.css";
 export const TodoCounter = ({ completed, total }) => {
   return (
     <h1 className="TodoCounterTitle">
-      {completed === total ? (
+      {completed === total && total ? (
         "Felicitaciones, completaste todas las tareas!!"
       ) : (
         <>

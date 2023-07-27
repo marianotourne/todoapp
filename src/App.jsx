@@ -6,16 +6,41 @@ import { TodoItem } from "./components/TodoItem/TodoItem";
 import { CreateTodoButton } from "./components/CreateTodoButton/CreateTodoButton";
 import React from "react";
 
-const defaultTodos = [
-  { text: "Aprender React", completed: false },
-  { text: "Crear array default todos", completed: true },
-  { text: "Inicializar el proyecto en git", completed: false },
-  { text: "Cambiar colores de estilos", completed: false },
-  { text: "Ir a la peña", completed: true },
-];
+// const defaultTodos = [
+//   { text: "Aprender React", completed: false },
+//   { text: "Crear array default todos", completed: true },
+//   { text: "Inicializar el proyecto en git", completed: false },
+//   { text: "Cambiar colores de estilos", completed: false },
+//   { text: "Ir a la peña", completed: true },
+// { text: "Ir al cine", completed: false },
+// ];
+// localStorage.setItem("TODOS_V1", JSON.stringify(defaultTodos));
+
+function useLocalStorage(itemName, initialValue) {
+  const LSItem = localStorage.getItem(itemName);
+
+  let parsedItem;
+
+  if (LSItem) {
+    parsedItem = JSON.parse(LSItem);
+  } else {
+    localStorage.setItem(itemName, JSON.stringify(initialValue));
+    parsedItem = initialValue;
+  }
+
+  const [item, setItem] = React.useState(parsedItem);
+
+  // This function update localStorage and update todos
+  const saveItem = (newItem) => {
+    localStorage.setItem(itemName, JSON.stringify(newItem));
+    setItem(newItem);
+  };
+
+  return [item, saveItem];
+}
 
 function App() {
-  const [todos, setTodos] = React.useState(defaultTodos);
+  const [todos, saveTodos] = useLocalStorage("TODOS_V1", []);
   const [searchValue, setSearchValue] = React.useState("");
 
   const completedTodos = todos.filter((todo) => todo.completed).length;
@@ -31,11 +56,12 @@ function App() {
     const newTodos = [...todos];
     const todoIndex = newTodos.findIndex((todo) => todo.text == text);
     newTodos[todoIndex].completed = !newTodos[todoIndex].completed;
-    setTodos(newTodos);
+    saveTodos(newTodos);
   };
+
   const deleteTodo = (text) => {
     const newTodos = todos.filter((todo) => todo.text != text);
-    setTodos(newTodos);
+    saveTodos(newTodos);
   };
 
   return (

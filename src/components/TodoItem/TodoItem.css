@@ -19,7 +19,11 @@
   cursor: pointer;
 }
 
-.iconDelete {
+.iconCheck:hover {
+  color: #3d9900;
+}
+
+.iconDelete:hover {
   color: #ff0000;
 }
 
