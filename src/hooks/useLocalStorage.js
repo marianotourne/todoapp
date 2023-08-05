@@ -1,18 +1,31 @@
 import React from "react";
 
 export const useLocalStorage = (itemName, initialValue) => {
-  const LSItem = localStorage.getItem(itemName);
+  const [item, setItem] = React.useState(initialValue);
+  const [loading, setLoading] = React.useState(true);
+  const [error, setError] = React.useState(false);
 
-  let parsedItem;
+  React.useEffect(() => {
+    setTimeout(() => {
+      try {
+        const LSItem = localStorage.getItem(itemName);
+        let parsedItem;
 
-  if (LSItem) {
-    parsedItem = JSON.parse(LSItem);
-  } else {
-    localStorage.setItem(itemName, JSON.stringify(initialValue));
-    parsedItem = initialValue;
-  }
+        if (LSItem) {
+          parsedItem = JSON.parse(LSItem);
+          setItem(parsedItem);
+        } else {
+          localStorage.setItem(itemName, JSON.stringify(initialValue));
+          parsedItem = initialValue;
+        }
 
-  const [item, setItem] = React.useState(parsedItem);
+        setLoading(false);
+      } catch (error) {
+        setLoading(false);
+        setError(true);
+      }
+    }, 2000);
+  }, []);
 
   // This function update localStorage and update todos
   const saveItem = (newItem) => {
@@ -20,5 +33,10 @@ export const useLocalStorage = (itemName, initialValue) => {
     setItem(newItem);
   };
 
-  return [item, saveItem];
+  return {
+    item,
+    saveItem,
+    loading,
+    error,
+  };
 };
