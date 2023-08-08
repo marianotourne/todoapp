@@ -7,11 +7,21 @@ import { TodosLoading } from "../TodosLoading/TodosLoading";
 import { TodosError } from "../TodosError/TodosError";
 import { TodosCreate } from "../TodosCreate/TodosCreate";
 import { TodoContext } from "../../context/TodoContext";
+import { TodoForm } from "../TodoForm/TodoForm";
+import { Modal } from "../Modal/Modal";
 import { useContext } from "react";
+import { Footer } from "../Footer/Footer";
 
 export const AppUI = () => {
-  const { loading, error, searchedTodos, toggleTodo, deleteTodo, totalTodos } =
-    useContext(TodoContext);
+  const {
+    loading,
+    error,
+    searchedTodos,
+    toggleTodo,
+    deleteTodo,
+    totalTodos,
+    openModal,
+  } = useContext(TodoContext);
 
   return (
     <>
@@ -32,6 +42,13 @@ export const AppUI = () => {
         ))}
       </TodoList>
       <CreateTodoButton />
+      <Footer />
+
+      {openModal && (
+        <Modal>
+          <TodoForm />
+        </Modal>
+      )}
     </>
   );
 };

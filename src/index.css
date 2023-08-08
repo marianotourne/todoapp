@@ -13,6 +13,7 @@ html {
 :root {
   --text-color: #f5efe7;
   --bkg-color: #4f709c;
+  --bkg-color-transparent: #4f709c77;
   --primary-color: #213555;
   --secondary-color: #d8c4b6;
 }
@@ -38,5 +39,4 @@ ul {
 
 #root {
   width: 95%;
-  height: 100vh;
 }

@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import "./TodoItem.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleCheck, faTrashCan } from "@fortawesome/free-regular-svg-icons";

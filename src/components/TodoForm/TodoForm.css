@@ -1,0 +1,47 @@
+form {
+  padding: 8px;
+  height: 95%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+textarea {
+  padding: 6px;
+  font-size: 1.8rem;
+}
+textarea:focus {
+  border: 2px solid var(--primary-color);
+}
+
+.todoButtonContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.todoButton {
+  padding: 6px;
+  color: var(--text-color);
+  font-weight: 500;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+  font-size: 1.6rem;
+}
+
+.todoButton:hover {
+  transform: translateY(-4px);
+}
+
+.todoButton:active {
+  transform: translateY(-1px);
+}
+
+.todoButtonCancel {
+  background-color: #ff00009e;
+}
+
+.todoButtonAdd {
+  background-color: #3d9900;
+}

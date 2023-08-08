@@ -1,0 +1,36 @@
+.TodoItem {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  margin: 16px 0px;
+  border: 1px solid #fff;
+  background-color: var(--primary-color);
+  padding: 16px;
+  min-height: 64px;
+}
+
+.TodoItem p {
+  font-size: 2rem;
+  margin: 0 12px;
+}
+
+.iconCheck,
+.iconDelete {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.iconCheck:hover {
+  color: #3d9900;
+}
+
+.iconDelete:hover {
+  color: #ff0000;
+}
+
+.iconCheckActive {
+  color: #3d9900;
+}
+
+.TodoItemCompleted {
+  text-decoration: line-through;
+}

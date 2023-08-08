@@ -11,6 +11,7 @@ export const TodoProvider = ({ children }) => {
     error,
   } = useLocalStorage("TODOS_V1", []);
   const [searchValue, setSearchValue] = useState("");
+  const [openModal, setOpenModal] = useState(false);
 
   const completedTodos = todos.filter((todo) => todo.completed).length;
   const totalTodos = todos.length;
@@ -20,6 +21,12 @@ export const TodoProvider = ({ children }) => {
     const searchText = searchValue.toLowerCase();
     return todoText.includes(searchText);
   });
+
+  const addTodo = (text) => {
+    const newTodos = [...todos];
+    newTodos.push({ text, completed: false });
+    saveTodos(newTodos);
+  };
 
   const toggleTodo = (text) => {
     const newTodos = [...todos];
@@ -45,6 +52,9 @@ export const TodoProvider = ({ children }) => {
         searchedTodos,
         toggleTodo,
         deleteTodo,
+        openModal,
+        setOpenModal,
+        addTodo,
       }}
     >
       {children}
