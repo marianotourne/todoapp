@@ -18,7 +18,7 @@ export const TodosError = () => {
         </svg>
       </div>
       <div className="error__title">
-        Se ha producido un error. Recargue la página.
+        An error has occurred. Reload the page.
       </div>
     </div>
   );

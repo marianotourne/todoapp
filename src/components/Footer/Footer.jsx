@@ -21,7 +21,7 @@ export const Footer = () => {
   return (
     <footer>
       <section className="footer-name">
-        <p>Desarrolado por Mariano Tourné</p>
+        <p>Developed by Mariano Tourné</p>
       </section>
       <section className="footer-media">
         <ul>

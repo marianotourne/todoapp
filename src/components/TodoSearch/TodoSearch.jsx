@@ -13,7 +13,7 @@ export const TodoSearch = () => {
         <>
           <input
             type="text"
-            placeholder="Ingrese texto a buscar"
+            placeholder="Enter text to search"
             value={searchValue}
             className="todoSearchInput"
             onChange={(event) => setSearchValue(event.target.value)}

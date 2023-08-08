@@ -27,3 +27,12 @@
 .CreateTodoButton:active {
   transform: translateY(-1px);
 }
+
+@media (max-width: 450px) {
+  .CreateTodoButton {
+    height: 48px;
+    width: 48px;
+    padding: 4px;
+    font-size: 3rem;
+  }
+}

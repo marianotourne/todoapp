@@ -23,7 +23,7 @@ export const TodoForm = () => {
   return (
     <form onSubmit={onSubmit}>
       <textarea
-        placeholder="Escribe tu TODO"
+        placeholder="Add a new task"
         rows="4"
         value={newTodoValue}
         onChange={onChange}
@@ -34,10 +34,10 @@ export const TodoForm = () => {
           className="todoButton todoButtonCancel"
           onClick={onCancel}
         >
-          Cancelar
+          Cancel
         </button>
         <button type="submit" className="todoButton todoButtonAdd">
-          Agregar
+          Add
         </button>
       </div>
     </form>

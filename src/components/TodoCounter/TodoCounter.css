@@ -8,3 +8,9 @@
 .TodoCounterTitle span {
   font-weight: bold;
 }
+
+@media (max-width: 450px) {
+  .TodoCounterTitle {
+    font-size: 3rem;
+  }
+}

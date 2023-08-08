@@ -8,13 +8,13 @@ export const TodoCounter = () => {
   return (
     <h1 className="TodoCounterTitle">
       {completedTodos === totalTodos && totalTodos
-        ? "Felicitaciones, completaste todas las tareas!!"
+        ? "Congratulations, you have completed all tasks!"
         : null}
       {totalTodos.length == 0 ? "" : null}
       {completedTodos != totalTodos ? (
         <>
-          Completaste <span>{completedTodos}</span> de <span>{totalTodos}</span>{" "}
-          TODOs
+          You have completed <span>{completedTodos}</span> of{" "}
+          <span>{totalTodos}</span> tasks
         </>
       ) : null}
     </h1>

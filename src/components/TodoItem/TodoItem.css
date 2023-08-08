@@ -34,3 +34,18 @@
 .TodoItemCompleted {
   text-decoration: line-through;
 }
+
+@media (max-width: 450px) {
+  .TodoItem {
+    padding: 12px;
+    min-height: 48px;
+  }
+  .TodoItem p {
+    font-size: 1.6rem;
+  }
+
+  .iconCheck,
+  .iconDelete {
+    font-size: 20px;
+  }
+}
