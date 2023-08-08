@@ -25,24 +25,28 @@ export const AppUI = () => {
 
   return (
     <>
-      <TodoCounter />
-      <TodoSearch />
-      <TodoList>
-        {loading ? <TodosLoading /> : null}
-        {error ? <TodosError /> : null}
-        {!loading && !error && totalTodos === 0 ? <TodosCreate /> : null}
-        {searchedTodos.map((todo) => (
-          <TodoItem
-            key={todo.text}
-            text={todo.text}
-            completed={todo.completed}
-            onComplete={() => toggleTodo(todo.text)}
-            onDelete={() => deleteTodo(todo.text)}
-          />
-        ))}
-      </TodoList>
-      <CreateTodoButton />
-      <Footer />
+      <section>
+        <TodoCounter />
+        <TodoSearch />
+        <TodoList>
+          {loading ? <TodosLoading /> : null}
+          {error ? <TodosError /> : null}
+          {!loading && !error && totalTodos === 0 ? <TodosCreate /> : null}
+          {searchedTodos.map((todo) => (
+            <TodoItem
+              key={todo.text}
+              text={todo.text}
+              completed={todo.completed}
+              onComplete={() => toggleTodo(todo.text)}
+              onDelete={() => deleteTodo(todo.text)}
+            />
+          ))}
+        </TodoList>
+        <CreateTodoButton />
+      </section>
+      <section>
+        <Footer />
+      </section>
 
       {openModal && (
         <Modal>

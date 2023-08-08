@@ -20,7 +20,7 @@ html {
 
 body {
   min-width: 360px;
-  margin: 0 auto 100px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -39,4 +39,7 @@ ul {
 
 #root {
   width: 95%;
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr auto;
 }

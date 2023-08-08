@@ -17,7 +17,7 @@ export const TodosCreate = () => {
           ></path>
         </svg>
       </div>
-      <div className="error__title">Crea tu primer TODO !!!</div>
+      <div className="error__title">Crea tu primer TODO</div>
     </div>
   );
 };
